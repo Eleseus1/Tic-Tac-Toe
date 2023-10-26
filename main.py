@@ -2,7 +2,7 @@ import visuals as v
 import menu as m
 import sys as s
 
-print("Welcome to Tic Tac Toe")
+print("Welcome to Tic Tac Toe\n")
 choice = "0"
 while choice not in ["1","2","3"]:
     print("[1]Play\n[2]Stats\n[3]Exit")

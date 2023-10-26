@@ -19,5 +19,6 @@ winner = ""
 x_wins = 0
 o_wins = 0
 draw = 0
+games = 0
 
 restart_choice = "y"

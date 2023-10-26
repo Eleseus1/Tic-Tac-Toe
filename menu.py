@@ -212,7 +212,8 @@ def reset():
         v.o_wins +=1
     elif v.winner == "draw":
         v.draw += 1
-    total_wins = (f"Player x`s wins: {v.x_wins}\nPlayer o`s wins: {v.o_wins}\nDraws: {v.draw}\n")
+    v.games = v.x_wins + v.o_wins + v.draw
+    total_wins = (f"Games played: {v.games}\nPlayer x`s wins: {v.x_wins}\nPlayer o`s wins: {v.o_wins}\nDraws: {v.draw}\n")
     print(total_wins)
     v.restart_choice = input("Do you want to play again?[Y/n] ")
     if v.restart_choice == "y" and "Y":
@@ -239,8 +240,7 @@ def reset():
 def stats_write(total_wins):
     date = time()
     date = str(date[2]) +", "+ str(date[1]) +", "+ str(date[0]) +" "+str(date[3])+":"+str(date[4])+"\n"
-    wins_check = v.x_wins + v.o_wins + v.draw
-    if wins_check > 0:
+    if v.games > 0:
         with open("ttt_stats.txt","a") as s:
             s.write(date+total_wins+"\n")
 
@@ -248,7 +248,10 @@ def stats_read():
     with open("ttt_stats.txt","+r") as s:
         s.write("")
         stats = s.read()
-    print(stats)
+    if len(stats) < 1:
+        print("Play some games to fill the stats tab")
+    else:
+        print(stats)
 
 """
 play()
