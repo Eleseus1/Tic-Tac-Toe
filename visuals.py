@@ -20,5 +20,6 @@ x_wins = 0
 o_wins = 0
 draw = 0
 games = 0
+start_time = ""
 
 restart_choice = "y"

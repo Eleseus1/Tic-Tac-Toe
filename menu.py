@@ -5,6 +5,10 @@ from time import localtime as time
 from sys import exit
 
 def play():
+    if v.start_time == "":
+        v.start_time = time()
+        v.start_time = str(v.start_time[3])+":"+str(v.start_time[4])
+
     if v._1 == v.empty:
         choice_1 = "1"
     else:
@@ -239,7 +243,10 @@ def reset():
 
 def stats_write(total_wins):
     date = time()
-    date = str(date[2]) +", "+ str(date[1]) +", "+ str(date[0]) +" "+str(date[3])+":"+str(date[4])+"\n"
+    if v.start_time == str(date[3])+":"+str(date[4]):
+        date = str(date[2]) +", "+ str(date[1]) +", "+ str(date[0]) +" "+str(date[3])+":"+str(date[4])+"\n"
+    else:
+        date = str(date[2]) +", "+ str(date[1]) +", "+ str(date[0]) +" "+v.start_time+"-"+str(date[3])+":"+str(date[4])+"\n"
     if v.games > 0:
         with open("ttt_stats.txt","a") as s:
             s.write(date+total_wins+"\n")
