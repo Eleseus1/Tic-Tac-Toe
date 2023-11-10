@@ -3,6 +3,7 @@ import visuals as v
 import field as f
 from time import localtime as time
 from sys import exit
+from os.path import exists
 
 def play():
     if v.start_time == "":
@@ -252,12 +253,13 @@ def stats_write(total_wins):
             s.write(date+total_wins+"\n")
 
 def stats_read():
-    with open("ttt_stats.txt","+r") as s:
-        s.write("")
-        stats = s.read()
-    if len(stats) < 1:
+
+    file_exists = exists("ttt_stats.txt")
+    if file_exists == False:
         print("Play some games to fill the stats tab")
     else:
+        with open("ttt_stats.txt","r") as s:
+            stats = s.read()
         print(stats)
 
 """
