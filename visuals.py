@@ -23,3 +23,5 @@ games = 0
 start_time = ""
 
 restart_choice = "y"
+
+gametype = ""
