@@ -1,7 +1,7 @@
 import copy as c
 import visuals as v
 import field as f
-from random import randint as random
+from random import choice as random_choice
 from time import localtime as time
 from time import sleep
 from sys import exit
@@ -280,15 +280,40 @@ def play_easy():
     field_list = [v._1, v._2, v._3, v._4, v._5, v._6, v._7, v._8, v._9,]
     sleep(1)
     while o_turn_end == False:
-        o_choice = random(0,8)
-        field_o = field_list[o_choice]
+        field_o = random_choice(field_list)
         if field_o == v.empty:
-            v._1 = c.deepcopy(v.o)
-            f.field = f.update_field()
+            if field_o == v._1:
+                v._1 = c.deepcopy(v.o)
+                f.field = f.update_field()
+            elif field_o == v._2:
+                v._2 = c.deepcopy(v.o)
+                f.field = f.update_field()
+            elif field_o == v._3:
+                v._3 = c.deepcopy(v.o)
+                f.field = f.update_field()
+            elif field_o == v._4:
+                v._4 = c.deepcopy(v.o)
+                f.field = f.update_field()
+            elif field_o == v._5:
+                v._5 = c.deepcopy(v.o)
+                f.field = f.update_field()
+            elif field_o == v._6:
+                v._6 = c.deepcopy(v.o)
+                f.field = f.update_field()
+            elif field_o == v._7:
+                v._7 = c.deepcopy(v.o)
+                f.field = f.update_field()
+            elif field_o == v._8:
+                v._8 = c.deepcopy(v.o)
+                f.field = f.update_field()
+            elif field_o == v._9:
+                v._9 = c.deepcopy(v.o)
+                f.field = f.update_field()
             v.turn = "x"
             o_turn_end = True
-        elif field_o == v.empty:
-            o = o
+    print("\nEasy Bots turn:")
+    print(f.field)
+    win_check()
         
 
 
