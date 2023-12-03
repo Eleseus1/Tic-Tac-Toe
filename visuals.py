@@ -15,6 +15,7 @@ _9 = empty
 
 turn = "x"
 winner = ""
+x_winner = False
 
 x_wins = 0
 o_wins = 0

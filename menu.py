@@ -51,12 +51,12 @@ def play():
     else:
         choice_9 = "/"
     
-    choice = ""
-    while choice not in ["1", "2", "3", "5", "6", "7", "8", "9"]:
+    choices = ""
+    while choices not in ["1", "2", "3", "5", "6", "7", "8", "9"]:
         print("")
-        choice = input(f"Player {v.turn}'s turn\n{choice_1}|{choice_2}|{choice_3}\n{choice_4}|{choice_5}|{choice_6}\n{choice_7}|{choice_8}|{choice_9}\nChoose a square: ")
+        choices = input(f"Player {v.turn}'s turn\n{choice_1}|{choice_2}|{choice_3}\n{choice_4}|{choice_5}|{choice_6}\n{choice_7}|{choice_8}|{choice_9}\nChoose a square: ")
         
-        if choice == "1" and v._1 == v.empty:
+        if choices == "1" and v._1 == v.empty:
             if v.turn == "x":
                 v._1 = c.deepcopy(v.x)
                 v.turn = "o"
@@ -66,7 +66,7 @@ def play():
                 v.turn = "x"
                 break
 
-        elif choice == "2" and v._2 == v.empty:
+        elif choices == "2" and v._2 == v.empty:
             if v.turn == "x":
                 v._2 = c.deepcopy(v.x)
                 v.turn = "o"
@@ -76,7 +76,7 @@ def play():
                 v.turn = "x"
                 break
 
-        elif choice == "3" and v._3 == v.empty:
+        elif choices == "3" and v._3 == v.empty:
             if v.turn == "x":
                 v._3 = c.deepcopy(v.x)
                 v.turn = "o"
@@ -86,7 +86,7 @@ def play():
                 v.turn = "x"
                 break
 
-        elif choice == "4" and v._4 == v.empty:
+        elif choices == "4" and v._4 == v.empty:
             if v.turn == "x":
                 v._4 = c.deepcopy(v.x)
                 v.turn = "o"
@@ -96,7 +96,7 @@ def play():
                 v.turn = "x"
                 break
 
-        elif choice == "5" and v._5 == v.empty:
+        elif choices == "5" and v._5 == v.empty:
             if v.turn == "x":
                 v._5 = c.deepcopy(v.x)
                 v.turn = "o"
@@ -106,7 +106,7 @@ def play():
                 v.turn = "x"
                 break
 
-        elif choice == "6" and v._6 == v.empty:
+        elif choices == "6" and v._6 == v.empty:
             if v.turn == "x":
                 v._6 = c.deepcopy(v.x)
                 v.turn = "o"
@@ -116,7 +116,7 @@ def play():
                 v.turn = "x"
                 break
 
-        elif choice == "7" and v._7 == v.empty:
+        elif choices == "7" and v._7 == v.empty:
             if v.turn == "x":
                 v._7 = c.deepcopy(v.x)
                 v.turn = "o"
@@ -126,7 +126,7 @@ def play():
                 v.turn = "x"
                 break
 
-        elif choice == "8" and v._8 == v.empty:
+        elif choices == "8" and v._8 == v.empty:
             if v.turn == "x":
                 v._8 = c.deepcopy(v.x)
                 v.turn = "o"
@@ -136,7 +136,7 @@ def play():
                 v.turn = "x"
                 break
 
-        elif choice == "9" and v._9 == v.empty:
+        elif choices == "9" and v._9 == v.empty:
             if v.turn == "x":
                 v._9 = c.deepcopy(v.x)
                 v.turn = "o"
@@ -206,53 +206,53 @@ def play_easy():
     else:
         choice_9 = "/"
     
-    choice = ""
+    choices = ""
     #The players turn
-    while choice not in ["1", "2", "3", "5", "6", "7", "8", "9"]:
+    while choices not in ["1", "2", "3", "5", "6", "7", "8", "9"]:
         print("")
-        choice = input(f"Player {v.turn}'s turn\n{choice_1}|{choice_2}|{choice_3}\n{choice_4}|{choice_5}|{choice_6}\n{choice_7}|{choice_8}|{choice_9}\nChoose a square: ")
+        choices = input(f"Player {v.turn}'s turn\n{choice_1}|{choice_2}|{choice_3}\n{choice_4}|{choice_5}|{choice_6}\n{choice_7}|{choice_8}|{choice_9}\nChoose a square: ")
         
-        if choice == "1" and v._1 == v.empty and v.turn == "x":
+        if choices == "1" and v._1 == v.empty and v.turn == "x":
                 v._1 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choice == "2" and v._2 == v.empty and v.turn == "x":
+        elif choices == "2" and v._2 == v.empty and v.turn == "x":
                 v._2 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choice == "3" and v._3 == v.empty and v.turn == "x":
+        elif choices == "3" and v._3 == v.empty and v.turn == "x":
                 v._3 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choice == "4" and v._4 == v.empty and v.turn == "x":
+        elif choices == "4" and v._4 == v.empty and v.turn == "x":
                 v._4 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choice == "5" and v._5 == v.empty and v.turn == "x":
+        elif choices == "5" and v._5 == v.empty and v.turn == "x":
                 v._5 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choice == "6" and v._6 == v.empty and v.turn == "x":
+        elif choices == "6" and v._6 == v.empty and v.turn == "x":
                 v._6 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choice == "7" and v._7 == v.empty and v.turn == "x":
+        elif choices == "7" and v._7 == v.empty and v.turn == "x":
                 v._7 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choice == "8" and v._8 == v.empty and v.turn == "x":
+        elif choices == "8" and v._8 == v.empty and v.turn == "x":
                 v._8 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choice == "9" and v._9 == v.empty and v.turn == "x":
+        elif choices == "9" and v._9 == v.empty and v.turn == "x":
                 v._9 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
@@ -314,13 +314,10 @@ def play_easy():
     o_turn_end = False
     sleep(1)
     while o_turn_end == False:
-        v._2 = "2"
         print(f"{field_list}<-list")
-        r.shuffle(field_list)
-        print(f"{field_list}<-shuffle")
         field_o = "draw"
         if len(field_list) > 0:
-            field_o = field_list[0]
+            field_o = r.choice(field_list)
             print(f"{field_list}<-[0]")
         if field_o != 1: # <-- This is because im to lazy to remove the whitespaces
             if field_o == v._1:
@@ -343,10 +340,11 @@ def play_easy():
                 v._9 = c.deepcopy(v.o)
             v.turn = "x"
             o_turn_end = True
-    f.field = f.update_field()
-    print("\nEasy Bots turn:")
-    print(f.field)
-    win_check()
+    if v.x_winner == False:
+        f.field = f.update_field()
+        print("\nEasy Bots turn:")
+        print(f.field)
+        win_check()
         
 
 
@@ -387,6 +385,7 @@ def win_check():
 
     if v.winner == "x":
         print("Player x wins this match")
+        v.x_winner = True
     elif v.winner == "o":
         print("Player o wins this match")
     # elif v._1 != v.empty and v._2 != v.empty and v._3 != v.empty and v._4 != v.empty and v._5 != v.empty and v._6 != v.empty and v._7 != v.empty and v._8 != v.empty and v._9 != v.empty:
