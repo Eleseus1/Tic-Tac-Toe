@@ -314,32 +314,27 @@ def play_easy():
     o_turn_end = False
     sleep(1)
     while o_turn_end == False:
-        print(f"{field_list}<-list")
-        field_o = "draw"
-        if len(field_list) > 0:
-            field_o = r.choice(field_list)
-            print(f"{field_list}<-[0]")
-        if field_o != 1: # <-- This is because im to lazy to remove the whitespaces
-            if field_o == v._1:
-                v._1 = c.deepcopy(v.o)
-            elif field_o == v._2:
-                v._2 = c.deepcopy(v.o)
-            elif field_o == v._3:
-                v._3 = c.deepcopy(v.o)
-            elif field_o == v._4:
-                v._4 = c.deepcopy(v.o)
-            elif field_o == v._5:
-                v._5 = c.deepcopy(v.o)
-            elif field_o == v._6:
-                v._6 = c.deepcopy(v.o)
-            elif field_o == v._7:
-                v._7 = c.deepcopy(v.o)
-            elif field_o == v._8:
-                v._8 = c.deepcopy(v.o)
-            elif field_o == v._9:
-                v._9 = c.deepcopy(v.o)
-            v.turn = "x"
-            o_turn_end = True
+        field_o = r.choice(field_list)
+        if field_o == v._1:
+            v._1 = c.deepcopy(v.o)
+        elif field_o == v._2:
+            v._2 = c.deepcopy(v.o)
+        elif field_o == v._3:
+            v._3 = c.deepcopy(v.o)
+        elif field_o == v._4:
+            v._4 = c.deepcopy(v.o)
+        elif field_o == v._5:
+            v._5 = c.deepcopy(v.o)
+        elif field_o == v._6:
+            v._6 = c.deepcopy(v.o)
+        if field_o == v._7:
+            v._7 = c.deepcopy(v.o)
+        elif field_o == v._8:
+            v._8 = c.deepcopy(v.o)
+        elif field_o == v._9:
+            v._9 = c.deepcopy(v.o)
+        v.turn = "x"
+        o_turn_end = True
     if v.x_winner == False:
         f.field = f.update_field()
         print("\nEasy Bots turn:")

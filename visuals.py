@@ -1,7 +1,7 @@
 # These are not really the visuals but yeah
-x = ("  x  ")
-o = ("  o  ")
-empty = ("     ")
+x = "  x  "
+o = "  o  "
+empty = "     "
 
 _1 = empty
 _2 = empty
