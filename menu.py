@@ -7,6 +7,7 @@ from time import sleep
 from sys import exit
 from os.path import exists
 
+# This is the main code for the PvP ttt games
 def play():
     if v.start_time == "":
         v.start_time = time()
@@ -152,12 +153,13 @@ def play():
     print(f.field)
     win_check()
 
+# This is the main code for the PvE mode on easy
 def play_easy():
     if v.start_time == "":
         v.start_time = time()
         v.start_time = str(v.start_time[3])+":"+str(v.start_time[4]) # This saves the start time for the stats
     field_list = []
-    # This checks if the squares are empty
+    # This checks if the squares are empty for the players turn
     if v._1 == v.empty:
         choice_1 = "1"
         field_list.append(v._1)
@@ -263,7 +265,7 @@ def play_easy():
     print(f.field)
     win_check()
     field_list = []
-    # This checks if the squares are empty
+    # This checks if the squares are empty for the bots turn
     if v._1 == v.empty:
         choice_1 = "1"
         field_list.append(v._1)
@@ -311,30 +313,59 @@ def play_easy():
         field_list.append(v._9)
     else:
         choice_9 = "/"
-    o_turn_end = False
+    # The bots turn
     sleep(1)
-    while o_turn_end == False:
-        field_o = r.choice(field_list)
-        if field_o == v._1:
+    while v.turn == "o":
+        field_o = r.randint(1,9)
+
+        if field_o == 1 and v._1 == v.empty:
             v._1 = c.deepcopy(v.o)
-        elif field_o == v._2:
+            v.turn = "x"
+            break
+
+        elif field_o == 2 and v._2 == v.empty:
             v._2 = c.deepcopy(v.o)
-        elif field_o == v._3:
+            v.turn = "x"
+            break
+
+        elif field_o == 3 and v._3 == v.empty:
             v._3 = c.deepcopy(v.o)
-        elif field_o == v._4:
+            v.turn = "x"
+            break
+
+        elif field_o == 4 and v._4 == v.empty:
             v._4 = c.deepcopy(v.o)
-        elif field_o == v._5:
+            v.turn = "x"
+            break
+
+        elif field_o == 5 and v._5 == v.empty:
             v._5 = c.deepcopy(v.o)
-        elif field_o == v._6:
+            v.turn = "x"
+            break
+
+        elif field_o == 6 and v._6 == v.empty: 
             v._6 = c.deepcopy(v.o)
-        if field_o == v._7:
+            v.turn = "x"
+            break
+
+        elif field_o == 7 and v._7 == v.empty:
             v._7 = c.deepcopy(v.o)
-        elif field_o == v._8:
+            v.turn = "x"
+            break
+
+        elif field_o == 8 and v._8 == v.empty:
             v._8 = c.deepcopy(v.o)
-        elif field_o == v._9:
+            v.turn = "x"
+            break
+
+        elif field_o == 9 and v._9 == v.empty:
             v._9 = c.deepcopy(v.o)
-        v.turn = "x"
-        o_turn_end = True
+            v.turn = "x"
+            break
+
+        else:
+            win_check()
+            
     if v.x_winner == False:
         f.field = f.update_field()
         print("\nEasy Bots turn:")
