@@ -14,14 +14,14 @@ while choice not in ["1","2","3"]:
             while v.restart_choice == "y" or "Y":
                 while v.winner == "":
                    m.play()
+                v.gamemode = "player"
                 m.reset()
-                v.gametype = "player"
         if choice == "2":
             while v.restart_choice == "y" or "Y":
                 while v.winner == "":
                    m.play_easy()
+                v.gamemode = "easy"
                 m.reset()
-                v.gametype = "easy"
         else:
             print("\nPlease sellect one of the options")
     elif choice == "2":

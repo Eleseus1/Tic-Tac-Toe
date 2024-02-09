@@ -7,7 +7,7 @@ from time import sleep
 from sys import exit
 from os.path import exists
 
-# This is the main code for the PvP ttt games
+# This is the main code for the PvP games
 def play():
     if v.start_time == "":
         v.start_time = time()
@@ -210,51 +210,51 @@ def play_easy():
     
     choices = ""
     #The players turn
-    while choices not in ["1", "2", "3", "5", "6", "7", "8", "9"]:
+    while v.turn == "x": 
         print("")
         choices = input(f"Player {v.turn}'s turn\n{choice_1}|{choice_2}|{choice_3}\n{choice_4}|{choice_5}|{choice_6}\n{choice_7}|{choice_8}|{choice_9}\nChoose a square: ")
         
-        if choices == "1" and v._1 == v.empty and v.turn == "x":
+        if choices == "1" and v._1 == v.empty:
                 v._1 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choices == "2" and v._2 == v.empty and v.turn == "x":
+        elif choices == "2" and v._2 == v.empty:
                 v._2 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choices == "3" and v._3 == v.empty and v.turn == "x":
+        elif choices == "3" and v._3 == v.empty:
                 v._3 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choices == "4" and v._4 == v.empty and v.turn == "x":
+        elif choices == "4" and v._4 == v.empty:
                 v._4 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choices == "5" and v._5 == v.empty and v.turn == "x":
+        elif choices == "5" and v._5 == v.empty:
                 v._5 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choices == "6" and v._6 == v.empty and v.turn == "x":
+        elif choices == "6" and v._6 == v.empty:
                 v._6 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choices == "7" and v._7 == v.empty and v.turn == "x":
+        elif choices == "7" and v._7 == v.empty:
                 v._7 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choices == "8" and v._8 == v.empty and v.turn == "x":
+        elif choices == "8" and v._8 == v.empty:
                 v._8 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
 
-        elif choices == "9" and v._9 == v.empty and v.turn == "x":
+        elif choices == "9" and v._9 == v.empty:
                 v._9 = c.deepcopy(v.x)
                 v.turn = "o"
                 break
@@ -315,7 +315,7 @@ def play_easy():
         choice_9 = "/"
     # The bots turn
     sleep(1)
-    while v.turn == "o":
+    while v.turn == "o" and v.x_winner == False and v.winner != "draw":
         field_o = r.randint(1,9)
 
         if field_o == 1 and v._1 == v.empty:
@@ -362,9 +362,6 @@ def play_easy():
             v._9 = c.deepcopy(v.o)
             v.turn = "x"
             break
-
-        else:
-            win_check()
             
     if v.x_winner == False:
         f.field = f.update_field()
@@ -440,10 +437,14 @@ def reset():
         v._7 = v.empty
         v._8 = v.empty
         v._9 = v.empty
-        if v.x_wins < v.o_wins:
+        if v.gamemode == "player":
+            if v.x_wins < v.o_wins:
+                v.turn = "x"
+            elif v.o_wins < v.x_wins:
+                v.turn = "o"
+        else:
             v.turn = "x"
-        elif v.o_wins < v.x_wins:
-            v.turn = "o"
+        v.x_winner = False
         v.winner = ""
         f.field = c.deepcopy(f.original_field)
     else:
@@ -455,21 +456,21 @@ def stats_write(total_wins):
     date = time()
     if v.start_time == str(date[3])+":"+str(date[4]):
         date = str(date[2]) +", "+ str(date[1]) +", "+ str(date[0]) +" "+str(date[3])+":"+str(date[4])+"\n"
-    elif v.gametype == "player":
+    elif v.gamemode == "player":
         player_x = input("Player x`s name: ")
         player_o = input("Player o`s name: ")
         date = str(date[2]) +", "+ str(date[1]) +", "+ str(date[0]) +" "+v.start_time+"-"+str(date[3])+": "+str(date[4])+" "+player_x+" vs. "+player_o+"\n"
     
-    elif v.gametype == "easy":
+    elif v.gamemode == "easy":
         player_x = input("Player x`s name: ")
         date = str(date[2]) +", "+ str(date[1]) +", "+ str(date[0]) +" "+v.start_time+"-"+str(date[3])+": "+str(date[4])+" "+player_x+" vs. "+"Easy Bot"+"\n"
     
-    elif v.gametype == "medium":
+    elif v.gamemode == "medium":
         player_x = input("Player x`s name: ")
         date = str(date[2]) +", "+ str(date[1]) +", "+ str(date[0]) +" "+v.start_time+"-"+str(date[3])+": "+str(date[4])+" "+player_x+" vs. "+"Medium Bot"+"\n"
     
 
-    elif v.gametype == "undefeatable":
+    elif v.gamemode == "undefeatable":
         player_x = input("Player x`s name: ")
         date = str(date[2]) +", "+ str(date[1]) +", "+ str(date[0]) +" "+v.start_time+"-"+str(date[3])+": "+str(date[4])+" "+player_x+" vs. "+"Undefeatable Bot"+"\n"
 

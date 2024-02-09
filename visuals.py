@@ -25,4 +25,4 @@ start_time = ""
 
 restart_choice = "y"
 
-gametype = ""
+gamemode = ""
